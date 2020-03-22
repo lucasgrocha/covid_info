@@ -1,2 +1,27 @@
-<h1>CovidInfoCountry#deaths</h1>
-<p>Find me in app/views/covid_info_country/deaths.html.erb</p>
+<h1>Confirmed <%= params['country'].upcase %></h1>
+
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Confirmed</th>
+      <th>Recovered</th>
+      <th>Deaths</th>
+      <th>Last update</th>
+    <tr>
+  </thead>
+
+  <tbody>
+    <% @deaths.each do |deaths| %>
+      <tr>
+        <td><%= deaths['countryRegion'] %></td>
+        <td><%= deaths['provinceState'] %></td>
+        <td><%= deaths['confirmed'] %></td>
+        <td><%= deaths['recovered'] %></td>
+        <td><%= deaths['deaths'] %></td>
+        <td><%= parse_time(deaths['lastUpdate']) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
