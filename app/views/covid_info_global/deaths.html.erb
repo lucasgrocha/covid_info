@@ -1,2 +1,21 @@
-<h1>CovidInfoGlobal#deaths</h1>
-<p>Find me in app/views/covid_info_global/deaths.html.erb</p>
+<h1>Deaths</h1>
+
+<table>
+  <thead>
+    <td>Country</td>
+    <td>City</td>
+    <td>Deaths</td>
+    <td>Last update</td>
+  </thead>
+
+  <tbody>
+    <% @deaths.each do |death| %>
+      <tr>
+        <td><%= death['countryRegion'] %></td>
+        <td><%= death['provinceState'] %></td>
+        <td><%= death['deaths'] %></td>
+        <td><%= parse_time(death['lastUpdate']) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

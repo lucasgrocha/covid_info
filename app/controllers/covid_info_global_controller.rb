@@ -5,6 +5,14 @@ class CovidInfoGlobalController < ApplicationController
     @confirmed = @global_status.confirmed
   end
 
+  def recovered
+    @recovered = @global_status.recovered
+  end
+
+  def deaths
+    @deaths = @global_status.deaths
+  end
+
   private
 
   def set_covid_global_request
