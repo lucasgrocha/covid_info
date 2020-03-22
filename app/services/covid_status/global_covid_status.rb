@@ -7,6 +7,10 @@ module CovidStatus
       @options = {}
     end
 
+    def general
+      self.class.get('', @options)
+    end
+
     def confirmed
       self.class.get('/confirmed', @options)
     end
