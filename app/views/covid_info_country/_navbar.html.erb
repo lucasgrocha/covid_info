@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">COVID INFO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Confirmed', global_confirmed_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Recovered', global_recovered_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Deaths', global_deaths_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Daily', global_daily_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
