@@ -1,0 +1,26 @@
+module CovidStatus
+  class GlobalCovidStatus
+    include HTTParty
+    base_uri 'https://covid19.mathdro.id/api'
+
+    def initialize
+      @options = {}
+    end
+
+    def confirmed
+      self.class.get('/confirmed', @options)
+    end
+
+    def recovered
+      self.class.get('/recovered', @options)
+    end
+
+    def deaths
+      self.class.get('/deaths', @options)
+    end
+
+    def daily
+      self.class.get('/daily', @options)
+    end
+  end
+end
