@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'welcome#index'
   get 'country/confirmed/:country', to: 'covid_info_country#confirmed'
   get 'country/recovered/:country', to: 'covid_info_country#recovered'
   get 'country/deaths/:country', to: 'covid_info_country#deaths'
