@@ -1,4 +1,4 @@
-<h1>Confirmed</h1>
+<h1>Confirmed <%= params['country'].upcase %></h1>
 
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
@@ -6,6 +6,8 @@
       <th>Country</th>
       <th>City</th>
       <th>Confirmed</th>
+      <th>Recovered</th>
+      <th>Deaths</th>
       <th>Last update</th>
     <tr>
   </thead>
@@ -15,7 +17,9 @@
       <tr>
         <td><%= confirmed['countryRegion'] %></td>
         <td><%= confirmed['provinceState'] %></td>
-        <td><%= link_to confirmed['confirmed'], "/country/confirmed/#{confirmed['iso3']}" %></td>
+        <td><%= confirmed['confirmed'] %></td>
+        <td><%= confirmed['recovered'] %></td>
+        <td><%= confirmed['deaths'] %></td>
         <td><%= parse_time(confirmed['lastUpdate']) %></td>
       </tr>
     <% end %>

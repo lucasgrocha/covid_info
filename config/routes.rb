@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'country/confirmed/:country', to: 'covid_info_country#confirmed'
+  get 'country/recovered/:country', to: 'covid_info_country#recovered'
+  get 'country/deaths/:country', to: 'covid_info_country#deaths'
+
   get 'global/confirmed', to: 'covid_info_global#confirmed'
   get 'global/recovered', to: 'covid_info_global#recovered'
   get 'global/deaths', to: 'covid_info_global#deaths'
