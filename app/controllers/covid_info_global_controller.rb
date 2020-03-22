@@ -13,6 +13,10 @@ class CovidInfoGlobalController < ApplicationController
     @deaths = @global_status.deaths
   end
 
+  def daily
+    @daily = @global_status.daily
+  end
+
   private
 
   def set_covid_global_request
