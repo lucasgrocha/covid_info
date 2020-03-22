@@ -1,0 +1,21 @@
+<h1>Confirmed</h1>
+
+<table>
+  <thead>
+    <td>Country</td>
+    <td>City</td>
+    <td>Confirmed</td>
+    <td>Last update</td>
+  </thead>
+
+  <tbody>
+    <% @confirmed.each do |confirmed| %>
+      <tr>
+        <td><%= confirmed['countryRegion'] %></td>
+        <td><%= confirmed['provinceState'] %></td>
+        <td><%= confirmed['confirmed'] %></td>
+        <td><%= parse_time(confirmed['lastUpdate']) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
