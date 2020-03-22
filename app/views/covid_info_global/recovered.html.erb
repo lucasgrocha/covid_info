@@ -15,7 +15,7 @@
       <tr>
         <td><%= recovered['countryRegion'] %></td>
         <td><%= recovered['provinceState'] %></td>
-        <td><%= recovered['recovered'] %></td>
+        <td><%= link_to recovered['recovered'], "/country/recovered/#{recovered['iso3']}" %></td>
         <td><%= parse_time(recovered['lastUpdate']) %></td>
       </tr>
     <% end %>

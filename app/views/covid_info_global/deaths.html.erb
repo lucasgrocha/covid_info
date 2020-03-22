@@ -15,7 +15,7 @@
       <tr>
         <td><%= death['countryRegion'] %></td>
         <td><%= death['provinceState'] %></td>
-        <td><%= death['deaths'] %></td>
+        <td><%= link_to death['deaths'], "/country/deaths/#{death['iso3']}" %></td>
         <td><%= parse_time(death['lastUpdate']) %></td>
       </tr>
     <% end %>
