@@ -1,23 +1,25 @@
 <h1 class="text-white">Daily</h1>
 
-<table class="table table-hover table-bordered bg-white">
-  <thead class="thead-dark">
-    <tr>
-      <th>Total Confirmed</th>
-      <th>Total Recovered</th>
-      <th>Mainland China</th>
-      <th>Report Date</th>
-    <tr>
-  </thead>
-
-  <tbody>
-    <% @daily.each do |daily| %>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered bg-white">
+    <thead class="thead-dark">
       <tr>
-        <td><%= daily['totalConfirmed'] %></td>
-        <td><%= daily['totalRecovered'] %></td>
-        <td><%= daily['mainlandChina'] %></td>
-        <td><%= parse_time(daily['reportDate']) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <th>Total Confirmed</th>
+        <th>Total Recovered</th>
+        <th>Mainland China</th>
+        <th>Report Date</th>
+      <tr>
+    </thead>
+
+    <tbody>
+      <% @daily.each do |daily| %>
+        <tr>
+          <td><%= daily['totalConfirmed'] %></td>
+          <td><%= daily['totalRecovered'] %></td>
+          <td><%= daily['mainlandChina'] %></td>
+          <td><%= parse_time(daily['reportDate']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

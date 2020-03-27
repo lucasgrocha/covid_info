@@ -1,27 +1,29 @@
 <h1 class="text-white">Confirmed <%= params['country'].upcase %></h1>
 
-<table class="table table-hover table-bordered bg-white">
-  <thead class="thead-dark">
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Confirmed</th>
-      <th>Recovered</th>
-      <th>Deaths</th>
-      <th>Last update</th>
-    <tr>
-  </thead>
-
-  <tbody>
-    <% @confirmed.each do |confirmed| %>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered bg-white">
+    <thead class="thead-dark">
       <tr>
-        <td><%= confirmed['countryRegion'] %></td>
-        <td><%= confirmed['provinceState'] %></td>
-        <td><%= confirmed['confirmed'] %></td>
-        <td><%= confirmed['recovered'] %></td>
-        <td><%= confirmed['deaths'] %></td>
-        <td><%= parse_time(confirmed['lastUpdate']) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <th>Country</th>
+        <th>City</th>
+        <th>Confirmed</th>
+        <th>Recovered</th>
+        <th>Deaths</th>
+        <th>Last update</th>
+      <tr>
+    </thead>
+
+    <tbody>
+      <% @confirmed.each do |confirmed| %>
+        <tr>
+          <td><%= confirmed['countryRegion'] %></td>
+          <td><%= confirmed['provinceState'] %></td>
+          <td class="text-danger font-weight-bold"><%= confirmed['confirmed'] %></td>
+          <td><%= confirmed['recovered'] %></td>
+          <td><%= confirmed['deaths'] %></td>
+          <td><%= parse_time(confirmed['lastUpdate']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,23 +1,25 @@
 <h1 class="text-white">Deaths</h1>
 
-<table class="table table-hover table-bordered bg-white">
-  <thead class="thead-dark">
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Deaths</th>
-      <th>Last update</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @deaths.each do |death| %>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered bg-white">
+    <thead class="thead-dark">
       <tr>
-        <td><%= death['countryRegion'] %></td>
-        <td><%= death['provinceState'] %></td>
-        <td><%= link_to death['deaths'], "/country/deaths/#{death['iso3']}" %></td>
-        <td><%= parse_time(death['lastUpdate']) %></td>
+        <th>Country</th>
+        <th>City</th>
+        <th>Deaths</th>
+        <th>Last update</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @deaths.each do |death| %>
+        <tr>
+          <td><%= death['countryRegion'] %></td>
+          <td><%= death['provinceState'] %></td>
+          <td><%= link_to death['deaths'], "/country/deaths/#{death['iso3']}" %></td>
+          <td><%= parse_time(death['lastUpdate']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

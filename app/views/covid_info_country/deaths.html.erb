@@ -1,27 +1,29 @@
 <h1 class="text-white">Deaths <%= params['country'].upcase %></h1>
 
-<table class="table table-hover table-bordered bg-white">
-  <thead class="thead-dark">
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Confirmed</th>
-      <th>Recovered</th>
-      <th>Deaths</th>
-      <th>Last update</th>
-    <tr>
-  </thead>
-
-  <tbody>
-    <% @deaths.each do |deaths| %>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered bg-white">
+    <thead class="thead-dark">
       <tr>
-        <td><%= deaths['countryRegion'] %></td>
-        <td><%= deaths['provinceState'] %></td>
-        <td><%= deaths['confirmed'] %></td>
-        <td><%= deaths['recovered'] %></td>
-        <td><%= deaths['deaths'] %></td>
-        <td><%= parse_time(deaths['lastUpdate']) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <th>Country</th>
+        <th>City</th>
+        <th>Confirmed</th>
+        <th>Recovered</th>
+        <th>Deaths</th>
+        <th>Last update</th>
+      <tr>
+    </thead>
+
+    <tbody>
+      <% @deaths.each do |deaths| %>
+        <tr>
+          <td><%= deaths['countryRegion'] %></td>
+          <td><%= deaths['provinceState'] %></td>
+          <td><%= deaths['confirmed'] %></td>
+          <td><%= deaths['recovered'] %></td>
+          <td class="text-danger font-weight-bold"><%= deaths['deaths'] %></td>
+          <td><%= parse_time(deaths['lastUpdate']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
