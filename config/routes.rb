@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: 'welcome#index'
   get 'country/confirmed/:country', to: 'covid_info_country#confirmed'
@@ -8,5 +10,6 @@ Rails.application.routes.draw do
   get 'global/recovered', to: 'covid_info_global#recovered'
   get 'global/deaths', to: 'covid_info_global#deaths'
   get 'global/daily', to: 'covid_info_global#daily'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  mount Sidekiq::Web => '/sidekiq'
 end
