@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm">
-    <%= render partial: 'status_card', locals: { kind: 'Confirmed', total: @general_infos.dig('confirmed', 'value'), path: global_confirmed_path } %>
+    <%= render partial: 'status_card', locals: { kind: 'Confirmed', total: @general_infos.dig('confirmed', 'value'), daily_increase: 0, path: global_confirmed_path } %>
   </div>
 
   <div class="col-sm">
-    <%= render partial: 'status_card', locals: { kind: 'Recovered', total: @general_infos.dig('recovered', 'value'), path: global_recovered_path } %>
+    <%= render partial: 'status_card', locals: { kind: 'Recovered', total: @general_infos.dig('recovered', 'value'), daily_increase: 0, path: global_recovered_path } %>
   </div>
 
   <div class="col-sm">
-    <%= render partial: 'status_card', locals: { kind: 'Deaths', total: @general_infos.dig('deaths', 'value'), path: global_deaths_path } %>
+    <%= render partial: 'status_card', locals: { kind: 'Deaths', total: @general_infos.dig('deaths', 'value'), daily_increase: 0, path: global_deaths_path } %>
   </div>
 </div>
