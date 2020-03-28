@@ -3,7 +3,7 @@
     <%= render partial: 'status_card', locals: { 
       kind: 'Confirmed',
       total: @general_infos.dig('confirmed', 'value'),
-      daily_increase: @daily_increase.confirmed,
+      daily_increase: @daily_increase&.confirmed,
       path: global_confirmed_path
     } %>
   </div>
@@ -12,7 +12,7 @@
     <%= render partial: 'status_card', locals: { 
       kind: 'Recovered',
       total: @general_infos.dig('recovered', 'value'),
-      daily_increase: @daily_increase.recovered,
+      daily_increase: @daily_increase&.recovered,
       path: global_recovered_path
     } %>
   </div>
@@ -21,7 +21,7 @@
     <%= render partial: 'status_card', locals: { 
       kind: 'Deaths',
       total: @general_infos.dig('deaths', 'value'),
-      daily_increase: @daily_increase.deaths,
+      daily_increase: @daily_increase&.deaths,
       path: global_deaths_path
     } %>
   </div>
