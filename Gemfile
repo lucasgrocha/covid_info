@@ -4,8 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'httparty'
-gem 'sidekiq'
+gem 'sidekiq', '5.2.8'
 gem 'sidekiq-scheduler'
+gem 'redis'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
