@@ -1,4 +1,4 @@
 :schedule:
   daily_covid_status:
-    cron: '* * * * *'
+    cron: '*/30 * * * *'
     class: DailyStatusJob
