@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'httparty'
-gem 'sidekiq', '5.2.8'
+gem 'sidekiq', '6.0.6'
 gem 'sidekiq-scheduler'
 gem 'redis'
 
