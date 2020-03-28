@@ -1,23 +1,25 @@
 <h1 class="text-white">Recovered</h1>
 
-<table class="table table-hover table-bordered bg-white">
-  <thead class="thead-dark">
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Recovered</th>
-      <th>Last update</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recovered.each do |recovered| %>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered bg-white">
+    <thead class="thead-dark">
       <tr>
-        <td><%= recovered['countryRegion'] %></td>
-        <td><%= recovered['provinceState'] %></td>
-        <td><%= link_to recovered['recovered'], "/country/recovered/#{recovered['iso3']}" %></td>
-        <td><%= parse_time(recovered['lastUpdate']) %></td>
+        <th>Country</th>
+        <th>City</th>
+        <th>Recovered</th>
+        <th>Last update</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @recovered.each do |recovered| %>
+        <tr>
+          <td><%= recovered['countryRegion'] %></td>
+          <td><%= recovered['provinceState'] %></td>
+          <td><%= link_to recovered['recovered'], "/country/recovered/#{recovered['iso3']}" %></td>
+          <td><%= parse_time(recovered['lastUpdate']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
