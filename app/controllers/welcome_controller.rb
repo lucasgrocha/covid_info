@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
     @general_infos = @global_status.general.slice('confirmed', 'deaths', 'recovered')
-    @daily_increase = DailyIncrease.last
+    @daily_increase = DailyIncrease.last_filled_increases
   end
 
   def update_increases
