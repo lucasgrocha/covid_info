@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   root to: 'welcome#index'
+  get 'update_increases', to: 'welcome#update_increases', as: 'update_increases'
   get 'country/confirmed/:country', to: 'covid_info_country#confirmed'
   get 'country/recovered/:country', to: 'covid_info_country#recovered'
   get 'country/deaths/:country', to: 'covid_info_country#deaths'

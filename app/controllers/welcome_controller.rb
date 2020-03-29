@@ -6,6 +6,11 @@ class WelcomeController < ApplicationController
     @daily_increase = DailyIncrease.last
   end
 
+  def update_increases
+    DailyStatusJob.perform_async
+    redirect_to root_path
+  end
+
   private
 
   def set_covid_global_request
