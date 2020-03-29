@@ -27,6 +27,10 @@
   </div>
 </div>
 
+<% if flash['alert'].present? %>
+  <p><%= flash['alert'] %></p>
+<% end %>
+
 <%= link_to update_increases_path, class: 'btn btn-success mt-4'	do %>
   <i class="fa fa-refresh" aria-hidden="true"></i>
 <% end %>

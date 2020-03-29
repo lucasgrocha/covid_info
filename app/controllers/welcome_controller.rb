@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
 
   def update_increases
     DailyStatusJob.perform_async
+    flash[:alert] = "Updated increases!"
     redirect_to root_path
   end
 
