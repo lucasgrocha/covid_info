@@ -7,6 +7,8 @@ gem 'httparty'
 gem 'sidekiq', '5.2.8'
 gem 'sidekiq-scheduler'
 gem 'redis'
+gem 'octicons_helper'
+gem 'octicons'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
