@@ -2,7 +2,7 @@
   "name": "covid_info",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
+    "@rails/actioncable": "^6.1.0",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "5.0.1",
